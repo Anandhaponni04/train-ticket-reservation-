@@ -1,0 +1,39 @@
+print('\tWELCOME!!BOOK YOUR TRAIN TICKETS HERE')
+print('tickets are available only from chennai to madurai and from madurai to chennai')
+print('''from madurai chennai: chennai super fast express
+from chennai to madurai:vaigai super fast express''')
+to=input('enter your destination:')
+print('timings are:1.40am to 9.50pm')
+print('enter 1 to book your tickets')
+print('enter 2 to check your pnr status')
+print('enter 3 to cancel your tickets')
+n=int(input('enter your choise:'))
+A={}
+if n==1:
+		nos=int(input('enter no. of tickets:'))
+		print('fare per ticket is 170rs.')
+		print('fare per ticket is 120rs for senior citizen')
+		for i in range(nos):
+			name=input('enter your name:')
+			age=int(input('enter your age:'))
+			A.setdefault(name,age)
+		fare=0
+		for i,j in A.items():
+			if j>60:
+				fare+=120
+			else:
+				fare+=170
+		print('HAVE A HAPPY JOURNEY')
+		print('your ticket details are:')
+		print(A)
+		print('your total fare is:',fare)
+elif n==2:
+	pnr=int(input('enter your pnr number:'))
+	print('your ticket details are:')
+	print('your coach no. is D3 ')
+	print('your seat no. is:38,39,40')
+	print('Destination:',to)
+	print('arrival timing:9.50pm')
+else:
+	pnr=int(input('enter your pnr number:'))
+	print('tickets booked in this pnr number',pnr,'has been cancelled successfully')
